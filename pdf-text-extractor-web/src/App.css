@@ -1,0 +1,27 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.upload-section {
+  flex: 20%;
+}
+
+.extracted-text-section {
+  flex: 10;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+}
