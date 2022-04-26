@@ -39,7 +39,7 @@ function App() {
                 />
             </div>
             <div className="extracted-text-section">
-                {pdfText && <p>{pdfText}</p>}
+                {pdfText && pdfText.map((page, index) => <p key={index}>{page}</p>)}
             </div>
         </div>
     );
