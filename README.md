@@ -4,7 +4,7 @@ A small application that extracts the text of an uploaded PDF file.
 
 ## Install
 This project was made with [node](https://nodejs.org/en/) on version [14.16.1](https://nodejs.org/download/release/v14.16.1/) and [npm](https://www.npmjs.com/).
-<br>In the root of the pdf-text-extractor-server and in the root of the pdf-text-extractor-web, run separately:
+<br>In the root of the pdf-text-extractor-server and in the root of the pdf-text-extractor-web run separately:
 ```
 npm install
 ```
@@ -18,3 +18,6 @@ To start the pdf-text-extractor-web, run in its root folder:
 ```
 npm start
 ```
+
+## References
+Using [pdfjs](https://mozilla.github.io/pdf.js/getting_started/)' generic build: [pdfjs-dist](https://www.npmjs.com/package/pdfjs-dist), to extract the text from the pdf.
