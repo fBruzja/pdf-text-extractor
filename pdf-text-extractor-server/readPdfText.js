@@ -2,6 +2,7 @@ const pdfJsLib = require("pdfjs-dist/es5/build/pdf.js");
 
 function getText(pdfUrl) {
     const loadingTask = pdfJsLib.getDocument(pdfUrl);
+    let pages = [];
 
     return loadingTask.promise
         .then(function (doc) {
@@ -18,11 +19,9 @@ function getText(pdfUrl) {
                             const strings = content.items.map(function (item) {
                                 return item.str;
                             });
-                            return strings.join(" ");
-                        })
-                        .then(function (textContent) {
-                            return textContent;
-                        });
+                            pages.push(strings.join(" "));
+                            page.cleanup();
+                        }).then();
                 });
             };
 
@@ -32,8 +31,9 @@ function getText(pdfUrl) {
             return promises;
         })
         .then(
-            function (textContent) {
-                return textContent;
+            function () {
+                console.log("End of Document, text extracted");
+                return pages;
             },
             function (err) {
                 console.error("Error: " + err);
